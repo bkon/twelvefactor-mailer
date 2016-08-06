@@ -37,6 +37,33 @@ RSpec.describe Twelvefactor::Environment::Mailer::Smtp do
       it { should eq expected_settings }
     end
 
+    context "when username includes urlencoded symbols" do
+      let(:url) { "smtp://person%40domain.com:password@server?domain=test.com" }
+      let(:expected_settings) do
+        Hash[
+          address: "server",
+          user_name: "person@domain.com",
+          password: "password",
+          domain: "test.com"
+        ]
+      end
+
+      it { should eq expected_settings }
+    end
+
+    context "when password includes urlencoded symbols" do
+      let(:url) { "smtp://user:p%40ss@server" }
+      let(:expected_settings) do
+        Hash[
+          address: "server",
+          user_name: "user",
+          password: "p@ss",
+        ]
+      end
+
+      it { should eq expected_settings }
+    end
+
     context "when URL does not include SMTP server credentials" do
       let(:url) { "smtp://mail:1025" }
       let(:expected_settings) do

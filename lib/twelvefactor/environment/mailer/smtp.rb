@@ -18,8 +18,8 @@ class Twelvefactor::Environment::Mailer::Smtp
     {
       address: url.host,
       port: url.port,
-      user_name: url.user,
-      password: url.password
+      user_name: url.user && URI.unescape(url.user),
+      password: url.password && URI.unescape(url.password)
     }
   end
 

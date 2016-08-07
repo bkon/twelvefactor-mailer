@@ -11,7 +11,7 @@ require "twelvefactor/environment/mailer/test"
 require "twelvefactor/environment/mailer/letter_opener"
 
 class Twelvefactor::Environment::Mailer
-  VERSION = "1.0.1".freeze
+  VERSION = "1.0.2".freeze
 
   HANDLERS = {
     "smtp" => Smtp,

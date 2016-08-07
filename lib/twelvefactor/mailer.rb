@@ -1,0 +1,1 @@
+require "twelvefactor/environment/mailer"

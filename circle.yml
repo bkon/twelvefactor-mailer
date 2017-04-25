@@ -8,5 +8,4 @@ dependencies:
 
 test:
   override:
-    - bundle exec rubocop
     - bundle exec rspec

@@ -4,6 +4,7 @@ module Twelvefactor; end
 module Twelvefactor::Environment; end
 class Twelvefactor::Environment::Mailer; end
 
+require "twelvefactor/environment/mailer/version"
 require "twelvefactor/environment/mailer/smtp"
 require "twelvefactor/environment/mailer/sendmail"
 require "twelvefactor/environment/mailer/file"
@@ -11,8 +12,6 @@ require "twelvefactor/environment/mailer/test"
 require "twelvefactor/environment/mailer/letter_opener"
 
 class Twelvefactor::Environment::Mailer
-  VERSION = "1.0.2".freeze
-
   HANDLERS = {
     "smtp" => Smtp,
     "sendmail" => Sendmail,

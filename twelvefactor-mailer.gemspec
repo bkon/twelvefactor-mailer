@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "twelvefactor/environment/mailer"
+require "twelvefactor/environment/mailer/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "twelvefactor-mailer"
@@ -25,8 +25,8 @@ EOF
   spec.require_paths = ["lib"]
 
   spec.add_dependency "twelvefactor", "~> 1.0"
-  spec.add_dependency "railties", "~> 4.1"
-  spec.add_dependency "activesupport", "~> 4.1"
+  spec.add_dependency "railties", ">= 4.1", "~> 5.0"
+  spec.add_dependency "activesupport", ">= 4.1", "~> 5.0"
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
